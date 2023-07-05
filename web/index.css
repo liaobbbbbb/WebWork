@@ -1,0 +1,78 @@
+/* 清除基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* 清除链接默认下划线 */
+a {
+    text-decoration: none;
+}
+
+/* 清除列表默认样式 */
+ul, ol {
+    list-style: none;
+}
+
+/* 清除表格默认样式 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#head {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(190,29,44);
+}
+
+#body {
+    width: 100%;
+    height: calc( 100vh - 200px );
+    background-color: white;
+}
+
+#foot {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(190,29,44);
+}
+
+/* 悬浮球基本样式实现 */
+#levitated-sphere-border {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 4px solid blue;
+    color: rgb(0, 0, 160);
+    border-radius:50%;
+    bottom: 50px;
+    left: 50px;    
+}
+
+#levitated-sphere {
+    position: absolute;
+    padding:3px;
+    top: 3.2px;
+    left: 3.2px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    background: linear-gradient(to bottom,rgb(106, 106, 255) 0%,rgb(0, 0, 160) 100%);
+    border-radius:50%;
+}
+
+#levitated-sphere-border:hover #levitated-sphere{
+    opacity: 0.85;
+    border: 4px solid rgb(53, 53, 207);
+}
+
+#levitated-sphere-border:hover{
+    border: 4px solid rgb(67, 67, 255);
+}
+
+#levitated-sphere:hover {
+    cursor: pointer;
+}
