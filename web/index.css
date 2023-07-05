@@ -76,3 +76,18 @@ table {
 #levitated-sphere:hover {
     cursor: pointer;
 }
+
+#knowledge-graph{
+    position: fixed;
+    height: calc(100vh - 200px);
+    width: 75%;
+    left: 12.5%;
+    top: 100px;
+    padding-top: 10px;
+    display: none;
+}
+
+#main{
+    height: 100% !important;
+    width: 100% !important;
+}
