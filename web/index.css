@@ -84,7 +84,7 @@ table {
     left: 12.5%;
     top: 100px;
     padding-top: 10px;
-    display: none;
+    visibility: hidden;
 }
 
 #main{

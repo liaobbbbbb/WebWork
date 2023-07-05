@@ -10,9 +10,9 @@ var isView = false;
 LevitatedSphere.onclick = function(){
     isView = !isView;
     if(isView){
-        KnowledgeGraph.style.display = "block";
+        KnowledgeGraph.style.visibility = "visible";
     }
     else{
-        KnowledgeGraph.style.display = "none";
+        KnowledgeGraph.style.visibility = "hidden";
     }
 }
