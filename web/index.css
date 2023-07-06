@@ -40,6 +40,29 @@ table {
     background-color: rgb(190,29,44);
 }
 
+@keyframes sphere {
+    0%{
+        width: 100px;
+        height: 100px;
+    }
+    25%{
+        width: 94px;
+        height: 94px;
+        left: 53px;
+        bottom: 53px;
+    }
+    50%{
+        width: 100px;
+        height: 100px;
+        left: 50px;
+        bottom: 50px;
+    }
+    100%{
+        width: 100px;
+        height: 100px;
+    }
+}
+
 /* 悬浮球基本样式实现 */
 #levitated-sphere-border {
     position: fixed;
@@ -51,6 +74,12 @@ table {
     border-radius:50%;
     bottom: 50px;
     left: 50px;    
+    box-shadow: -7px 7px 15px -2px rgb(9, 9, 135); 
+    animation-name: sphere;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
 }
 
 #levitated-sphere {
@@ -90,4 +119,8 @@ table {
 #main{
     height: 100% !important;
     width: 100% !important;
+}
+
+body{
+    transform-style: preserve-3d;
 }
