@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
-    <script src="./jquery-3.2.1.js"></script>
-    <script src="./echarts.js"></script>
+    <link rel="stylesheet" href="./vis-network.css">
+    <script src="./vis-network.js"></script>
+    <!-- <script src="./jquery-3.2.1.js"></script>
+    <script src="./echarts.js"></script> -->
     <title>demo</title>
 </head>
 <body>
@@ -18,146 +20,357 @@
     </div>
 
     <div id="knowledge-graph">
-        
-        <div id="main"></div>
-        <script type="text/javascript">
-            var myChart = echarts.init(document.getElementById('main'));
-            var categories = [];
-            for (var i = 0; i < 2; i++) {
-                categories[i] = {
-                    name: '类目' + i
-                };
-            }
-            option = {
-                // 图的标题
-                title: {
-                    text: '知识图谱'
-                },
-                // 提示框的配置
-                tooltip: {
-                    formatter: function (x) {
-                        return x.data.des;
-                    }
-                },
-                // 工具箱
-                toolbox: {
-                    // 显示工具箱
-                    show: true,
-                    feature: {
-                        mark: {
-                            show: true
-                        },
-                        // 还原
-                        restore: {
-                            show: true
-                        },
-                        // 保存为图片
-                        saveAsImage: {
-                            show: false
-                        }
-                    }
-                },
-                legend: [{
-                    // selectedMode: 'single',
-                    data: categories.map(function (a) {
-                        return a.name;
-                    })
-                }],
-                series: [{
-                    type: 'graph', // 类型:关系图
-                    layout: 'force', //图的布局，类型为力导图
-                    symbolSize: 40, // 调整节点的大小
-                    roam: true, // 是否开启鼠标缩放和平移漫游。默认不开启。如果只想要开启缩放或者平移,可以设置成 'scale' 或者 'move'。设置成 true 为都开启
-                    edgeSymbol: ['circle', 'arrow'],
-                    edgeSymbolSize: [2, 10],
-                    edgeLabel: {
-                        normal: {
-                            textStyle: {
-                                fontSize: 20
-                            }
-                        }
-                    },
-                    force: {
-                        repulsion: 2500,
-                        edgeLength: [10, 50]
-                    },
-                    draggable: true,
-                    lineStyle: {
-                        normal: {
-                            width: 2,
-                            color: '#4b565b',
-                        }
-                    },
-                    edgeLabel: {
-                        normal: {
-                            show: true,
-                            formatter: function (x) {
-                                return x.data.name;
-                            }
-                        }
-                    },
-                    label: {
-                        normal: {
-                            show: true,
-                            textStyle: {}
-                        }
-                    },
-        
-                    // 数据
-                    data: [{
-                        name: 'node01',
-                        des: 'nodedes01',
-                        symbolSize: 70,
-                        category: 0,
-                    }, {
-                        name: 'node02',
-                        des: 'nodedes02',
-                        symbolSize: 50,
-                        category: 1,
-                    }, {
-                        name: 'node03',
-                        des: 'nodedes3',
-                        symbolSize: 50,
-                        category: 1,
-                    }, {
-                        name: 'node04',
-                        des: 'nodedes04',
-                        symbolSize: 50,
-                        category: 1,
-                    }, {
-                        name: 'node05',
-                        des: 'nodedes05',
-                        symbolSize: 50,
-                        category: 1,
-                    }],
-                    links: [{
-                        source: 'node01',
-                        target: 'node02',
-                        name: 'link01',
-                        des: 'link01des'
-                    }, {
-                        source: 'node01',
-                        target: 'node03',
-                        name: 'link02',
-                        des: 'link02des'
-                    }, {
-                        source: 'node01',
-                        target: 'node04',
-                        name: 'link03',
-                        des: 'link03des'
-                    }, {
-                        source: 'node01',
-                        target: 'node05',
-                        name: 'link04',
-                        des: 'link05des'
-                    }],
-                    categories: categories,
-                }]
-            };
-            myChart.setOption(option);
-        </script>
-
     </div>
+
+    <script type="text/javascript">
+        // create an array with nodes
+        var nodes = new vis.DataSet([
+            {id:1,label:'node 1',title:'node 1'},
+            {id:2,label:'node 2',title:'node 2'},
+            {id:3,label:'node 3',title:'node 3'},
+            {id:4,label:'node 4',title:'node 4'},
+            {id:5,label:'node 5',title:'node 5'},
+            {id:6,label:'node 6',title:'node 6'},
+            {id:7,label:'node 7',title:'node 7'},
+            {id:8,label:'node 8',title:'node 8'},
+        ]);
+    
+        // create an array with edges
+        var edges = new vis.DataSet([
+            {from:1,to:2},
+            {from:1,to:3},
+            {from:1,to:4},
+            {from:1,to:5},
+            {from:1,to:6},
+            {from:1,to:7},
+            {from:1,to:8},
+        ]);
+
+        // create a network
+        var container = document.getElementById('knowledge-graph');
+    
+        // provide the data in the vis format
+        var data = {
+            nodes: nodes,
+            edges: edges
+        };
+        
+        var options = {
+            autoResize : false,                     //开始时是否静止 false是静止
+            layout:{
+                randomSeed:13,                      //3,13,15,16,18,21
+                hierarchical:{
+                    levelSeparation:100,
+                },
+            },                 
+            physics : false
+        }
+    
+        // initialize your network!
+        var network = new vis.Network(container, data, options);
+
+        var addNode = function(id,label,toId){
+            let newNode = {id: id, label: label,title: label};
+            let line = {from : toId, to: id};
+            nodes.add(newNode);
+            edges.add(line);
+        }
+
+        var viewNode = function(id,label,toId){
+            let newNode = {id: id, label: label};
+            nodes.add(newNode);
+        }
+
+        var deleteNode = function(id,label,toId){
+            let newNode = {id: id, label: label};
+            nodes.remove(newNode);
+        }
+
+        //node 2 的附属节点
+        addNode(21,"node 2 1",2);
+        addNode(22,"node 2 2",2);
+        addNode(23,"node 2 3",2);
+        addNode(24,"node 2 4",2);
+        addNode(25,"node 2 5",2);
+        deleteNode(21,"node 2 1",2);
+        deleteNode(22,"node 2 2",2);
+        deleteNode(23,"node 2 3",2);
+        deleteNode(24,"node 2 4",2);
+        deleteNode(25,"node 2 5",2);
+
+        //node 3 的附属节点
+        addNode(31,"node 3 1",3);
+        addNode(32,"node 3 2",3);
+        addNode(33,"node 3 3",3);
+        addNode(34,"node 3 4",3);
+        addNode(35,"node 3 5",3);
+        deleteNode(31,"node 3 1",3);
+        deleteNode(32,"node 3 2",3);
+        deleteNode(33,"node 3 3",3);
+        deleteNode(34,"node 3 4",3);
+        deleteNode(35,"node 3 5",3);
+        
+        //node 4 的附属节点
+        addNode(41,"node 4 1",4);
+        addNode(42,"node 4 2",4);
+        addNode(43,"node 4 3",4);
+        addNode(44,"node 4 4",4);
+        addNode(45,"node 4 5",4);
+        deleteNode(41,"node 4 1",4);
+        deleteNode(42,"node 4 2",4);
+        deleteNode(43,"node 4 3",4);
+        deleteNode(44,"node 4 4",4);
+        deleteNode(45,"node 4 5",4);
+
+        //node 5 的附属节点
+        addNode(51,"node 5 1",5);
+        addNode(52,"node 5 2",5);
+        addNode(53,"node 5 3",5);
+        addNode(54,"node 5 4",5);
+        addNode(55,"node 5 5",5);
+        deleteNode(51,"node 5 1",5);
+        deleteNode(52,"node 5 2",5);
+        deleteNode(53,"node 5 3",5);
+        deleteNode(54,"node 5 4",5);
+        deleteNode(55,"node 5 5",5);
+
+        //node 6 的附属节点
+        addNode(61,"node 6 1",6);
+        addNode(62,"node 6 2",6);
+        addNode(63,"node 6 3",6);
+        addNode(64,"node 6 4",6);
+        addNode(65,"node 6 5",6);
+        deleteNode(61,"node 6 1",6);
+        deleteNode(62,"node 6 2",6);
+        deleteNode(63,"node 6 3",6);
+        deleteNode(64,"node 6 4",6);
+        deleteNode(65,"node 6 5",6);
+
+        //node 7 的附属节点
+        addNode(71,"node 7 1",7);
+        addNode(72,"node 7 2",7);
+        addNode(73,"node 7 3",7);
+        addNode(74,"node 7 4",7);
+        addNode(75,"node 7 5",7);
+        deleteNode(71,"node 7 1",7);
+        deleteNode(72,"node 7 2",7);
+        deleteNode(73,"node 7 3",7);
+        deleteNode(74,"node 7 4",7);
+        deleteNode(75,"node 7 5",7);
+
+        //node 8 的附属节点
+        addNode(81,"node 8 1",8);
+        addNode(82,"node 8 2",8);
+        addNode(83,"node 8 3",8);
+        addNode(84,"node 8 4",8);
+        addNode(85,"node 8 5",8);
+        deleteNode(81,"node 8 1",8);
+        deleteNode(82,"node 8 2",8);
+        deleteNode(83,"node 8 3",8);
+        deleteNode(84,"node 8 4",8);
+        deleteNode(85,"node 8 5",8);
+
+        network.on('click',(e) => {
+            // console.log(e.nodes[0]);
+            // console.log(e.edges.length);
+            if(e.nodes[0] == 2){
+                if(e.edges.length == 1){
+                    deleteNode(3,"node 3",1);
+                    deleteNode(4,"node 4",1);
+                    deleteNode(5,"node 5",1);
+                    deleteNode(6,"node 6",1);
+                    deleteNode(7,"node 7",1);
+                    deleteNode(8,"node 8",1);
+                    viewNode(21,"node 2 1",2);
+                    viewNode(22,"node 2 2",2);
+                    viewNode(23,"node 2 3",2);
+                    viewNode(24,"node 2 4",2);
+                    viewNode(25,"node 2 5",2);
+                }
+                else if(e.edges.length == 6){
+                    deleteNode(21,"node 2 1",2);
+                    deleteNode(22,"node 2 2",2);
+                    deleteNode(23,"node 2 3",2);
+                    deleteNode(24,"node 2 4",2);
+                    deleteNode(25,"node 2 5",2);
+                    viewNode(3,"node 3",1);
+                    viewNode(4,"node 4",1);
+                    viewNode(5,"node 5",1);
+                    viewNode(6,"node 6",1);
+                    viewNode(7,"node 7",1);
+                    viewNode(8,"node 8",1);
+                }
+            }
+            if(e.nodes[0] == 3){
+                if(e.edges.length == 1){
+                    deleteNode(2,"node 2",1);
+                    deleteNode(4,"node 4",1);
+                    deleteNode(5,"node 5",1);
+                    deleteNode(6,"node 6",1);
+                    deleteNode(7,"node 7",1);
+                    deleteNode(8,"node 8",1);
+                    viewNode(31,"node 3 1",3);
+                    viewNode(32,"node 3 2",3);
+                    viewNode(33,"node 3 3",3);
+                    viewNode(34,"node 3 4",3);
+                    viewNode(35,"node 3 5",3);
+                }
+                else if(e.edges.length == 6){
+                    deleteNode(31,"node 3 1",3);
+                    deleteNode(32,"node 3 2",3);
+                    deleteNode(33,"node 3 3",3);
+                    deleteNode(34,"node 3 4",3);
+                    deleteNode(35,"node 3 5",3);
+                    viewNode(2,"node 2",1);
+                    viewNode(4,"node 4",1);
+                    viewNode(5,"node 5",1);
+                    viewNode(6,"node 6",1);
+                    viewNode(7,"node 7",1);
+                    viewNode(8,"node 8",1);
+                }
+            }
+            if(e.nodes[0] == 4){
+                if(e.edges.length == 1){
+                    deleteNode(2,"node 2",1);
+                    deleteNode(3,"node 3",1);
+                    deleteNode(5,"node 5",1);
+                    deleteNode(6,"node 6",1);
+                    deleteNode(7,"node 7",1);
+                    deleteNode(8,"node 8",1);
+                    viewNode(41,"node 4 1",4);
+                    viewNode(42,"node 4 2",4);
+                    viewNode(43,"node 4 3",4);
+                    viewNode(44,"node 4 4",4);
+                    viewNode(45,"node 4 5",4);
+                }
+                else if(e.edges.length == 6){
+                    deleteNode(41,"node 4 1",4);
+                    deleteNode(42,"node 4 2",4);
+                    deleteNode(43,"node 4 3",4);
+                    deleteNode(44,"node 4 4",4);
+                    deleteNode(45,"node 4 5",4);
+                    viewNode(2,"node 2",1);
+                    viewNode(3,"node 3",1);
+                    viewNode(5,"node 5",1);
+                    viewNode(6,"node 6",1);
+                    viewNode(7,"node 7",1);
+                    viewNode(8,"node 8",1);
+                }
+            }
+            if(e.nodes[0] == 5){
+                if(e.edges.length == 1){
+                    deleteNode(2,"node 2",1);
+                    deleteNode(3,"node 3",1);
+                    deleteNode(4,"node 4",1);
+                    deleteNode(6,"node 6",1);
+                    deleteNode(7,"node 7",1);
+                    deleteNode(8,"node 8",1);
+                    viewNode(51,"node 5 1",5);
+                    viewNode(52,"node 5 2",5);
+                    viewNode(53,"node 5 3",5);
+                    viewNode(54,"node 5 4",5);
+                    viewNode(55,"node 5 5",5);
+                }
+                else if(e.edges.length == 6){
+                    deleteNode(51,"node 5 1",5);
+                    deleteNode(52,"node 5 2",5);
+                    deleteNode(53,"node 5 3",5);
+                    deleteNode(54,"node 5 4",5);
+                    deleteNode(55,"node 5 5",5);
+                    viewNode(2,"node 2",1);
+                    viewNode(3,"node 3",1);
+                    viewNode(4,"node 4",1);
+                    viewNode(6,"node 6",1);
+                    viewNode(7,"node 7",1);
+                    viewNode(8,"node 8",1);
+                }
+            }
+            if(e.nodes[0] == 6){
+                if(e.edges.length == 1){
+                    deleteNode(2,"node 2",1);
+                    deleteNode(3,"node 3",1);
+                    deleteNode(4,"node 4",1);
+                    deleteNode(5,"node 5",1);
+                    deleteNode(7,"node 7",1);
+                    deleteNode(8,"node 8",1);
+                    viewNode(61,"node 6 1",6);
+                    viewNode(62,"node 6 2",6);
+                    viewNode(63,"node 6 3",6);
+                    viewNode(64,"node 6 4",6);
+                    viewNode(65,"node 6 5",6);
+                }
+                else if(e.edges.length == 6){
+                    deleteNode(61,"node 6 1",6);
+                    deleteNode(62,"node 6 2",6);
+                    deleteNode(63,"node 6 3",6);
+                    deleteNode(64,"node 6 4",6);
+                    deleteNode(65,"node 6 5",6);
+                    viewNode(2,"node 2",1);
+                    viewNode(3,"node 3",1);
+                    viewNode(4,"node 4",1);
+                    viewNode(5,"node 5",1);
+                    viewNode(7,"node 7",1);
+                    viewNode(8,"node 8",1);
+                }
+            }
+            if(e.nodes[0] == 7){
+                if(e.edges.length == 1){
+                    deleteNode(2,"node 2",1);
+                    deleteNode(3,"node 3",1);
+                    deleteNode(4,"node 4",1);
+                    deleteNode(5,"node 5",1);
+                    deleteNode(6,"node 6",1);
+                    deleteNode(8,"node 8",1);
+                    viewNode(71,"node 7 1",7);
+                    viewNode(72,"node 7 2",7);
+                    viewNode(73,"node 7 3",7);
+                    viewNode(74,"node 7 4",7);
+                    viewNode(75,"node 7 5",7);
+                }
+                else if(e.edges.length == 6){
+                    deleteNode(71,"node 7 1",7);
+                    deleteNode(72,"node 7 2",7);
+                    deleteNode(73,"node 7 3",7);
+                    deleteNode(74,"node 7 4",7);
+                    deleteNode(75,"node 7 5",7);
+                    viewNode(2,"node 2",1);
+                    viewNode(3,"node 3",1);
+                    viewNode(4,"node 4",1);
+                    viewNode(5,"node 5",1);
+                    viewNode(6,"node 6",1);
+                    viewNode(8,"node 8",1);
+                }
+            }
+            if(e.nodes[0] == 8){
+                if(e.edges.length == 1){
+                    deleteNode(2,"node 2",1);
+                    deleteNode(3,"node 3",1);
+                    deleteNode(4,"node 4",1);
+                    deleteNode(5,"node 5",1);
+                    deleteNode(6,"node 6",1);
+                    deleteNode(7,"node 7",1);
+                    viewNode(81,"node 8 1",8);
+                    viewNode(82,"node 8 2",8);
+                    viewNode(83,"node 8 3",8);
+                    viewNode(84,"node 8 4",8);
+                    viewNode(85,"node 8 5",8);
+                }
+                else if(e.edges.length == 6){
+                    deleteNode(81,"node 8 1",8);
+                    deleteNode(82,"node 8 2",8);
+                    deleteNode(83,"node 8 3",8);
+                    deleteNode(84,"node 8 4",8);
+                    deleteNode(85,"node 8 5",8);
+                    viewNode(2,"node 2",1);
+                    viewNode(3,"node 3",1);
+                    viewNode(4,"node 4",1);
+                    viewNode(5,"node 5",1);
+                    viewNode(6,"node 6",1);
+                    viewNode(7,"node 7",1);
+                }
+            }
+        })
+    </script>
 
 </body>
 <script src="./index.js"></script>
