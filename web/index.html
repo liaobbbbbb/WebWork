@@ -59,11 +59,20 @@
             autoResize : false,                     //开始时是否静止 false是静止
             layout:{
                 randomSeed:13,                      //3,13,15,16,18,21
-                hierarchical:{
-                    levelSeparation:100,
-                },
+                // hierarchical:{
+                //     levelSeparation:100,
+                // },
             },                 
-            physics : false
+            physics:{
+                barnesHut:{
+                    theta:0.1,
+                    damping:0.12,
+                    // avoidOverlap:0.1
+                },
+                maxVelocity:10,
+                timestep:0.5
+                    
+            }
         }
     
         // initialize your network!
@@ -369,6 +378,7 @@
                     viewNode(7,"node 7",1);
                 }
             }
+            network.redraw()
         })
     </script>
 
