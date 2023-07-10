@@ -16,7 +16,9 @@
     <div id="foot"></div>
 
     <div id="levitated-sphere-border">
-        <div id="levitated-sphere"></div>
+        <div id="levitated-sphere">
+            <p>搜索</p>
+        </div>
     </div>
 
     <div id="knowledge-graph">
@@ -56,22 +58,36 @@
         };
         
         var options = {
-            autoResize : false,                     //开始时是否静止 false是静止
-            layout:{
-                randomSeed:13,                      //3,13,15,16,18,21
-                // hierarchical:{
-                //     levelSeparation:100,
-                // },
-            },                 
-            physics:{
-                barnesHut:{
-                    theta:0.1,
-                    damping:0.12,
-                    // avoidOverlap:0.1
+            autoResize: true,
+            nodes: {
+                size:25,
+                font: {
+                    size: 16,
                 },
-                maxVelocity:10,
-                timestep:0.5
-                    
+                shadow: true,
+                widthConstraint:{
+                    minimum:70
+                }
+            },
+            edges: {
+                smooth: {
+                    forceDirection: "none"
+                }
+            },
+            physics: {
+                forceAtlas2Based: {
+                    springLength: 80,
+                    springConstant: 0.27
+                },
+                minVelocity: 0.75,
+                solver: "forceAtlas2Based",
+                timestep: 0.34
+            },
+            layout: {
+                randomSeed: undefined
+            },
+            interaction: {
+                hover: true
             }
         }
     

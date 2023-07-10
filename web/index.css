@@ -69,12 +69,12 @@ table {
     width: 100px;
     height: 100px;
     background-color: white;
-    border: 4px solid blue;
-    color: rgb(0, 0, 160);
+    border: 4px solid rgb(218, 165, 32);
+    /* color: rgb(0, 0, 160); */
     border-radius:50%;
     bottom: 50px;
     left: 50px;    
-    box-shadow: -7px 7px 15px -2px rgb(9, 9, 135); 
+    box-shadow: -7px 7px 15px -2px rgb(136, 102, 17); 
     animation-name: sphere;
     animation-duration: 3s;
     animation-timing-function: ease-in-out;
@@ -89,17 +89,28 @@ table {
     left: 3.2px;
     width: calc(100% - 6px);
     height: calc(100% - 6px);
-    background: linear-gradient(to bottom,rgb(106, 106, 255) 0%,rgb(0, 0, 160) 100%);
+    background: linear-gradient(to bottom,rgb(247, 213, 129) 0%,rgb(165, 121, 8) 100%);
     border-radius:50%;
+    
+}
+
+#levitated-sphere p{
+    position: absolute;
+    font-weight: 600;
+    color: brown;
+    left:50%;
+    top: 50%;
+    transform:translateX(-50%) translateY(-50%);
+    user-select: none;
 }
 
 #levitated-sphere-border:hover #levitated-sphere{
     opacity: 0.85;
-    border: 4px solid rgb(53, 53, 207);
+    border: 4px solid rgb(218, 165, 32);
 }
 
 #levitated-sphere-border:hover{
-    border: 4px solid rgb(67, 67, 255);
+    border: 4px solid rgb(218, 165, 32);
 }
 
 #levitated-sphere:hover {
