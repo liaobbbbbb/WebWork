@@ -5,11 +5,13 @@
     "pages/achieve/achieve"
   ],
   "window": {
-    "defaultTitle": "My App"
+    "defaultTitle": "氢悦出行",
+    "showTitleLoading":"YES"
   },
   "behavior": {
     "requestReferrerStrategy": "page"
   },
+  "lazyCodeLoading": "requiredComponents",
   "tabBar": {
       "textColor": "#dddddd",
       "selectedColor": "#49a9ee",
@@ -34,5 +36,16 @@
           "activeIcon": "images/tabbar/customer-fill_1.png"
         }
       ]
+    },
+    "permission":{
+      "scope.album":{
+        "desc": "用于读取照片作为用户头像"
+      },
+      "scope.camera":{
+        "desc": "用于拍摄照片作为用户头像"
+      },
+      "scope.userLocation":{
+        "desc": "位置信息将用于匹配您的服务城市，"
+      }
     }
 }

@@ -1,4 +1,7 @@
 Page({
+  data:{
+    
+  },
   onLoad(query) {
     // 页面加载
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
@@ -27,8 +30,8 @@ Page({
   onShareAppMessage() {
     // 返回自定义分享信息
     return {
-      title: 'My App',
-      desc: 'My App description',
+      title: '氢悦出行',
+      desc: '',
       path: 'pages/index/index',
     };
   },
