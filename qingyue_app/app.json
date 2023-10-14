@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/achieve/achieve"
+  ],
+  "window": {
+    "defaultTitle": "My App"
+  },
+  "behavior": {
+    "requestReferrerStrategy": "page"
+  },
+  "tabBar": {
+      "textColor": "#dddddd",
+      "selectedColor": "#49a9ee",
+      "backgroundColor": "#ffffff",
+      "items": [
+        {
+          "name": "首页",
+          "pagePath": "pages/index/index",
+          "icon": "images/tabbar/home-fill.png",
+          "activeIcon": "images/tabbar/home-fill_1.png"
+        },
+        {
+          "name": "成就",
+          "pagePath": "pages/achieve/achieve",
+          "icon": "images/tabbar/order-success.png",
+          "activeIcon": "images/tabbar/order-success_1.png"
+        },
+        {
+          "name": "我的",
+          "pagePath": "pages/user/user",
+          "icon": "images/tabbar/customer-fill.png",
+          "activeIcon": "images/tabbar/customer-fill_1.png"
+        }
+      ]
+    }
+}
