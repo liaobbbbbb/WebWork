@@ -1,3 +1,43 @@
-<view>
-  New Page
+<view class="id_top_bar">
+  <view class="id_mes_bar">
+    <view class="id_mes">
+      <image mode="aspectFit" src="../../images/id_mes_bar/user.png" />
+    </view>
+    <view class="id_name">
+      {{usermes.username}}
+    </view>
+
+    <view class="id_data_bar">
+
+      <view class="id_data_item">
+        <view class="id_data_item_1">
+          {{usermes.td_kil}}
+        </view>
+        <view class="id_data_item_2">
+          今日公里数
+        </view>
+      </view>
+
+      <view class="id_data_item_0">
+        <view class="id_data_item_1">
+          {{usermes.trip_num}}
+        </view>
+        <view class="id_data_item_2">
+          出行次数
+        </view>
+      </view>
+
+      <view class="id_data_item_0">
+        <view class="id_data_item_1">
+          {{usermes.total_kil}}
+        </view>
+        <view class="id_data_item_2">
+          总公里数
+        </view>
+      </view>
+
+    </view>
+  </view>
+
 </view>
+  
