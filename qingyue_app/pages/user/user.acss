@@ -1,5 +1,5 @@
 page{
-    background-image: linear-gradient(to bottom, rgb(14, 192, 96) 0rpx, rgba(14, 192, 96, 0.5) 400rpx, white 420rpx);
+    background-image: linear-gradient(to bottom, rgb(14, 192, 96) 0rpx, rgba(14, 192, 96, 0.5) 400rpx, rgb(246, 246, 246) 420rpx);
 }
 
 .id_mes{
@@ -32,7 +32,7 @@ page{
     margin-left: 5%;
     margin-right: 5%;
     position: absolute;
-    top: 270rpx;
+    top: 250rpx;
     display: flex;
     flex-wrap:nowrap;
     justify-content:space-around;
@@ -55,4 +55,169 @@ page{
     left:50%;
     top: 50%;
     transform:translateX(-50%) translateY(-50%);
+}
+
+.clock_in{
+    width: 140rpx;
+    height: 50rpx;
+    background-color: white;
+    position: absolute;
+    font-size: 25rpx;
+    top: 110rpx;
+    right: 40rpx;
+    border-radius: 25rpx;
+}
+
+.clock_in:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+.clock_in_bar image{
+    height: 40rpx;
+    width: 40rpx;
+    position: absolute;
+    left: 15rpx;
+    top: 50%;
+    transform:translateY(-50%);
+}
+
+.clock_in_mes{
+    position: absolute;
+    left: 70rpx;
+    top: 50%;
+    transform:translateY(-50%);
+}
+
+.clock_in_mes_1{
+    position: absolute;
+    width: 90rpx;
+    left:50%;
+    top: 50%;
+    transform:translateX(-50%) translateY(-50%);
+}
+
+.clock_in_img_border{
+    height: 5rpx;
+    width: 30rpx;
+    position: absolute;
+    background-color: rgb(14, 192, 96);
+    left: 19rpx;
+    top: 14rpx;
+}
+
+.lateral_function_bar{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: absolute;
+    top: 360rpx;
+    background-color: white;
+    border-radius: 20rpx;
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+}
+
+.lateral_function_item{
+    position: relative;
+    font-size: 25rpx;
+    width: 150rpx;
+    height: 130rpx;
+}
+
+.lateral_function_item:hover{
+    opacity: 0.7;
+}
+
+.lateral_function_item_1 image{
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    left:50%;
+    top: 10rpx;
+    transform:translateX(-50%);
+}
+
+.lateral_function_item_2{
+    /* font-size * 字数 */
+    width: 100rpx;                  
+    position: absolute;
+    bottom: 14rpx;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.lateral_function_decoration_1{
+    width: 30rpx;
+    height: 42rpx;
+    background-color: rgb(14, 192, 96);
+    position: absolute;
+    top: 20rpx;
+    left: 61rpx;
+    border-radius: 3rpx 3rpx 20rpx 3rpx;
+}
+
+.lateral_function_decoration_2{
+    width: 6rpx;
+    height: 8rpx;
+    background-color: white;
+    position: absolute;
+    top: 52rpx;
+    left: 83rpx;
+}
+
+.longitudinal_function_bar{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: absolute;
+    top: 520rpx;
+    background-color: white;
+    border-radius: 20rpx;
+}
+
+.longitudinal_function_item{
+    width: 100%;
+    height: 100rpx;
+    position: relative;
+}
+
+.longitudinal_function_item:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+.longitudinal_function_item_1 image{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    left: 50rpx;
+    top: 50%;
+    transform:translateY(-50%);
+}
+
+.longitudinal_function_item_2{
+    font-size: 25rpx;
+    position: absolute;
+    left: 140rpx;
+    top: 50%;
+    transform:translateY(-50%);
+}
+
+.longitudinal_function_line{
+    width: calc( 100% - 120rpx );
+    height: 1rpx;
+    border-bottom: 1rpx rgb(230, 230, 230) solid;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.longitudinal_function_decoration_1{
+    width: 10rpx;
+    height: 10rpx;
+    background-color: rgb(14, 192, 96);
+    border-radius: 50%;
+    position: absolute;
+    top: 45rpx;
+    left: 65rpx;
 }

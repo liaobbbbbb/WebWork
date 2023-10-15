@@ -37,7 +37,94 @@
       </view>
 
     </view>
+
+    <view class="clock_in" onTap="handle_clock" a:if="{{ clock_in }}">
+      <view class="clock_in_bar">
+        <view class="clock_in_img_border"></view>
+        <image mode="aspectFit" src="../../images/clock_in/customs-clearance-data.png" />
+        <view class="clock_in_mes">
+          打卡
+        </view>
+      </view>
+    </view>
+
+    <view class="clock_in" a:else>
+      <view class="clock_in_bar">
+        <view class="clock_in_mes_1">
+          已打卡
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class="lateral_function_bar">
+
+  <view class="lateral_function_item">
+    <view class="lateral_function_item_1">
+      <view class="lateral_function_decoration_1"></view>
+      <view class="lateral_function_decoration_2"></view>
+      <image mode="aspectFit" src="../../images/lateral_function_bar/application-record.png" />
+    </view>
+    <view class="lateral_function_item_2">
+      出行记录
+    </view>
+  </view>
+
+  <view class="lateral_function_item">
+    <view class="lateral_function_item_1">
+      <image mode="aspectFit" src="../../images/lateral_function_bar/honor.png" />
+    </view>
+    <view class="lateral_function_item_2">
+      我的积分
+    </view>
+  </view>
+
+  <view class="lateral_function_item">
+    <view class="lateral_function_item_1">
+      <image mode="aspectFit" src="../../images/lateral_function_bar/top-raning.png" />
+    </view>
+    <view class="lateral_function_item_2">
+      我的成就
+    </view>
   </view>
 
 </view>
   
+<view class="longitudinal_function_bar">
+  
+  <view class="longitudinal_function_item">
+    <view class="longitudinal_function_item_1">
+      <image mode="aspectFit" src="../../images/longitudinal_function_bar/lable.png" />
+    </view>
+    <view class="longitudinal_function_item_2">
+      功能1
+    </view>
+    <view class="longitudinal_function_line"></view>
+  </view>
+
+
+  <view class="longitudinal_function_item">
+    <view class="longitudinal_function_item_1">
+      <image mode="aspectFit" src="../../images/longitudinal_function_bar/lable.png" />
+    </view>
+    <view class="longitudinal_function_item_2">
+      功能2
+    </view>
+    <view class="longitudinal_function_line"></view>
+  </view>
+
+  
+
+  <view class="longitudinal_function_item">
+    <view class="longitudinal_function_item_1">
+      <view class="longitudinal_function_decoration_1"></view>
+      <image mode="aspectFit" src="../../images/longitudinal_function_bar/settings.png" />
+    </view>
+    <view class="longitudinal_function_item_2">
+      设置
+    </view>
+  </view>
+
+</view>
