@@ -1,0 +1,144 @@
+page{
+    background-image: linear-gradient(to bottom, rgb(14, 192, 96) 0rpx, rgb(14, 192, 96) 80rpx, rgb(246, 246, 246) 81rpx);
+}
+
+.top_bar{
+    width: 100%;
+    height: 80rpx;
+    position: relative;
+}
+
+.top_bar image{
+    height: 40rpx;
+    width: 40rpx;
+    position: absolute;
+    top: 50%;
+    left: 20rpx;
+    transform:translateY(-50%);
+}
+
+.top_bar_mes{
+    font-size: 32rpx;
+    font-weight: 1000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translateY(-50%) translateX(-50%);
+}
+
+.longitudinal_function_bar{
+    width: 100%;
+    margin-top: 20rpx;
+    background-color: white;
+}
+
+.longitudinal_function_item_0{
+    width: 100%;
+    height: 130rpx;
+    position: relative;
+}
+
+.longitudinal_function_item_img{
+    width: 100rpx;
+    height: 100rpx;
+    background-color: white;
+    border-radius:50%;
+    overflow: hidden;
+    position: absolute;
+    top: 15rpx;
+    right: 100rpx;
+}
+
+.longitudinal_function_item_img image{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.longitudinal_function_item_0:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+.longitudinal_function_item_0_1{
+    width: 100%;
+    height: 100rpx;
+    position: relative;
+}
+
+.longitudinal_function_item_0_1:hover{
+    background-color: white;
+}
+
+.longitudinal_function_item{
+    width: 100%;
+    height: 100rpx;
+    position: relative;
+}
+
+.longitudinal_function_item:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+.longitudinal_function_item_1{
+    position: absolute;
+    left: 50rpx;
+    top: 50%;
+    transform:translateY(-50%);
+}
+
+.longitudinal_function_item_3 image{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 50%;
+    transform:translateY(-50%);
+}
+
+.longitudinal_function_item_2{
+    font-size: 25rpx;
+    color: #d2d2d2;
+    position: absolute;
+    top: 50%;
+    right: 100rpx;
+    transform:translateY(-50%);
+}
+
+.longitudinal_function_item_4{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translateX(-50%) translateY(-50%);
+}
+
+.longitudinal_function_line{
+    width: 100% ;
+    height: 1rpx;
+    border-bottom: 1rpx rgb(230, 230, 230) solid;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.longitudinal_function_line_1{
+    width: 100% ;
+    height: 10rpx;
+    background-color: rgb(230,230,230);
+}
+
+.longitudinal_function_bar_1{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    z-index: 2;
+}
+
+.change_head_bg{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+}

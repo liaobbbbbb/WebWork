@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/user/user",
+    "pages/user/user_page/user_page",
     "pages/index/index",
-    "pages/achieve/achieve",
-    "pages/user/user_page/user_page"
+    "pages/user/user",
+    "pages/achieve/achieve"
   ],
   "window": {
     "defaultTitle": "氢悦出行",

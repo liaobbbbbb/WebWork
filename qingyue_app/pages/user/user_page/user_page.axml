@@ -1,0 +1,136 @@
+<view class="top_bar">
+  <image mode="aspectFit" src="../../../images/user_image/user_page/left-arrow.png" onTap="navigate_to_user" />
+  <view class="top_bar_mes">
+    账号设置
+  </view>
+</view>
+
+<view class="longitudinal_function_bar">
+  
+  <view class="longitudinal_function_item_0" onTap="change_head">
+    <view class="longitudinal_function_item_1">
+      头像
+    </view>
+    <view class="longitudinal_function_item_img">
+      <image mode="scaleToFill" src="../../../images/user_image/user_page/user.png" />
+    </view>
+    <view class="longitudinal_function_item_3">
+      <image mode="scaleToFill" src="../../../images/user_image/user_page/right.png" />
+    </view>
+    <view class="longitudinal_function_line"></view>
+  </view>
+
+  <view class="longitudinal_function_item_0_1">
+    <view class="longitudinal_function_item_1">
+      ID
+    </view>
+    <view class="longitudinal_function_item_2">
+      {{user_mes.user_id}}
+    </view>
+    <view class="longitudinal_function_line"></view>
+  </view>
+
+  <view class="longitudinal_function_item">
+    <view class="longitudinal_function_item_1">
+      昵称
+    </view>
+    <view class="longitudinal_function_item_2">
+      {{user_mes.user_name}}
+    </view>
+    <view class="longitudinal_function_item_3">
+      <image mode="scaleToFill" src="../../../images/user_image/user_page/right.png" />
+    </view>
+    <view class="longitudinal_function_line"></view>
+  </view>
+
+  <view class="longitudinal_function_item">
+    <view class="longitudinal_function_item_1">
+      性别
+    </view>
+    <view class="longitudinal_function_item_2">
+      {{user_mes.user_sex}}
+    </view>
+    <view class="longitudinal_function_item_3">
+      <image mode="scaleToFill" src="../../../images/user_image/user_page/right.png" />
+    </view>
+  </view>
+
+</view>
+
+<view class="longitudinal_function_bar">
+
+  <view class="longitudinal_function_item">
+    <view class="longitudinal_function_item_1">
+      手机号
+    </view>
+    <view class="longitudinal_function_item_2">
+      {{user_mes.user_num}}
+    </view>
+    <view class="longitudinal_function_item_3">
+      <image mode="scaleToFill" src="../../../images/user_image/user_page/right.png" />
+    </view>
+    <view class="longitudinal_function_line"></view>
+  </view>
+
+  <view class="longitudinal_function_item">
+    <view class="longitudinal_function_item_1">
+      支付宝
+    </view>
+    <view class="longitudinal_function_item_2">
+      {{user_mes.user_alipay}}
+    </view>
+    <view class="longitudinal_function_item_3">
+      <image mode="scaleToFill" src="../../../images/user_image/user_page/right.png" />
+    </view>
+  </view>
+
+</view>
+
+<view class="longitudinal_function_bar">
+
+  <view class="longitudinal_function_item">
+    <view class="longitudinal_function_item_4">
+      退出登录
+    </view>
+  </view>
+
+</view>
+
+
+
+<!-- 换头像弹框 -->
+<view class="change_head" a:if="{{ show_change_head }}">
+  <view class="change_head_bg" onTap="change_head">
+    
+  </view>
+
+  <view class="longitudinal_function_bar_1">
+
+    <view class="longitudinal_function_item">
+      <view class="longitudinal_function_item_4">
+        拍照
+      </view>
+      <view class="longitudinal_function_line"></view>
+    </view>
+
+    <view class="longitudinal_function_item">
+      <view class="longitudinal_function_item_4">
+        从相册中选择
+      </view>
+    </view>
+
+    <view class="longitudinal_function_line_1"></view>
+
+    <view class="longitudinal_function_item" onTap="change_head">
+      <view class="longitudinal_function_item_4">
+        取消
+      </view>
+    </view>
+  
+  </view>
+</view>
+
+<!-- 换昵称弹框 -->
+<view>
+  
+</view>
