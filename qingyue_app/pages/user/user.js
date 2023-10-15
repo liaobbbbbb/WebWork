@@ -13,5 +13,10 @@ Page({
       clock_in: false,
     });
   },
+  show_id_page(){
+    my.navigateTo({
+      url: 'user_page/user_page'
+    });
+  },
   onLoad() {},
 });

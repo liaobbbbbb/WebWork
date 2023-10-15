@@ -1,9 +1,9 @@
 <view class="id_top_bar">
   <view class="id_mes_bar">
-    <view class="id_mes">
+    <view class="id_mes" onTap="show_id_page">
       <image mode="aspectFit" src="../../images/id_mes_bar/user.png" />
     </view>
-    <view class="id_name">
+    <view class="id_name" onTap="show_id_page">
       {{usermes.username}}
     </view>
 
@@ -101,6 +101,9 @@
     <view class="longitudinal_function_item_2">
       功能1
     </view>
+    <view class="longitudinal_function_item_3">
+      <image mode="scaleToFill" src="../../images/longitudinal_function_bar/right.png" />
+    </view>
     <view class="longitudinal_function_line"></view>
   </view>
 
@@ -111,6 +114,9 @@
     </view>
     <view class="longitudinal_function_item_2">
       功能2
+    </view>
+    <view class="longitudinal_function_item_3">
+      <image mode="scaleToFill" src="../../images/longitudinal_function_bar/right.png" />
     </view>
     <view class="longitudinal_function_line"></view>
   </view>
@@ -124,6 +130,9 @@
     </view>
     <view class="longitudinal_function_item_2">
       设置
+    </view>
+    <view class="longitudinal_function_item_3">
+      <image mode="scaleToFill" src="../../images/longitudinal_function_bar/right.png" />
     </view>
   </view>
 
