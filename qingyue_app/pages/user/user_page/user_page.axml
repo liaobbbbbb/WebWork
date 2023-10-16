@@ -30,7 +30,7 @@
     <view class="longitudinal_function_line"></view>
   </view>
 
-  <view class="longitudinal_function_item">
+  <view class="longitudinal_function_item" onTap="change_name">
     <view class="longitudinal_function_item_1">
       昵称
     </view>
@@ -43,7 +43,7 @@
     <view class="longitudinal_function_line"></view>
   </view>
 
-  <view class="longitudinal_function_item">
+  <view class="longitudinal_function_item" onTap="change_sex">
     <view class="longitudinal_function_item_1">
       性别
     </view>
@@ -59,7 +59,7 @@
 
 <view class="longitudinal_function_bar">
 
-  <view class="longitudinal_function_item">
+  <view class="longitudinal_function_item" onTap="change_num">
     <view class="longitudinal_function_item_1">
       手机号
     </view>
@@ -78,6 +78,16 @@
     </view>
     <view class="longitudinal_function_item_2">
       {{user_mes.user_alipay}}
+    </view>
+  </view>
+
+</view>
+
+<view class="longitudinal_function_bar">
+
+  <view class="longitudinal_function_item">
+    <view class="longitudinal_function_item_1">
+      修改密码
     </view>
     <view class="longitudinal_function_item_3">
       <image mode="scaleToFill" src="../../../images/user_image/user_page/right.png" />
@@ -131,6 +141,113 @@
 </view>
 
 <!-- 换昵称弹框 -->
-<view>
-  
+<view class="change_name" a:if="{{ show_change_name }}">
+  <view class="change_head_bg" onTap="change_name">
+    
+  </view>
+
+  <view class="change_name_bar {{change_name_bar_active}} ">
+    <view class="change_name_mes">  
+      昵称
+    </view>
+    <view class="change_name_input">
+      <input placeholder="请输入2~12位昵称" 
+        enableNative="{{false}}"
+        onInput="change_name_bind" 
+        focus={{ change_name_foucs }}
+        onFocus="change_name_input_on"
+        onBlur="change_name_input_off"
+      />
+      <!-- 
+        enableNative="{{true}}": 防止光标错位
+        onInput: 键盘输入时触发
+        onFocus: 聚焦时触发
+        onBlur: 失去焦点时触发
+       -->
+      <view class="input_line"></view>
+    </view>
+    <view class="change_name_button">
+      <view class="change_name_button_item" onTap="change_name">
+        <view>
+          取消
+        </view>
+      </view>
+      <view class="change_name_button_item" onTap="handle_change_name">
+        <view>
+          确定
+        </view>
+      </view>
+    </view>
+  </view>
+
 </view>
+
+
+
+<!-- 换性别弹框 -->
+<view class="change_head" a:if="{{ show_change_sex }}">
+  <view class="change_head_bg" onTap="change_sex">
+    
+  </view>
+
+  <view class="longitudinal_function_bar_1">
+
+    <view class="longitudinal_function_item" onTap="chnage_sex_male">
+      <view class="longitudinal_function_item_4">
+        男
+      </view>
+      <view class="longitudinal_function_line"></view>
+    </view>
+
+    <view class="longitudinal_function_item" onTap="change_sex_female">
+      <view class="longitudinal_function_item_4">
+        女
+      </view>
+    </view>
+
+    <view class="longitudinal_function_line_1"></view>
+
+    <view class="longitudinal_function_item" onTap="change_sex">
+      <view class="longitudinal_function_item_4">
+        取消
+      </view>
+    </view>
+  
+  </view>
+</view>
+
+
+
+<!-- 换手机号弹框 -->
+<view class="change_head" a:if="{{ show_change_num }}">
+  <view class="change_head_bg" onTap="change_num">
+    
+  </view>
+
+  <view class="longitudinal_function_bar_1">
+
+    <view class="longitudinal_function_item" onTap="">
+      <view class="longitudinal_function_item_4">
+        更换手机号
+      </view>
+    </view>
+
+    <view class="longitudinal_function_line_1"></view>
+
+    <view class="longitudinal_function_item" onTap="change_num">
+      <view class="longitudinal_function_item_4">
+        取消
+      </view>
+    </view>
+  
+  </view>
+</view>
+
+
+
+<!-- 
+  未完成功能：
+    更换手机号
+    修改密码
+    退出登录
+ -->

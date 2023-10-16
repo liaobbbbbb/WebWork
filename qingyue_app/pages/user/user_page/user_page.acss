@@ -142,3 +142,80 @@ page{
     position: absolute;
     top: 0;
 }
+
+.change_name_bar{
+    width: 90%;
+    left: 5%;
+    height: 250rpx;
+    background-color: white;
+    top: calc( 50% - 100rpx );
+    position: absolute;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.change_name_bar_active{
+    top: calc( 30% - 100rpx );
+}
+
+.change_name_mes{
+    font-size: 40rpx;
+    font-weight: 800;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.change_name_input{
+    width: 90%;
+    position: relative;
+    left: 5%;
+    top: 90rpx;
+}
+
+.change_name_input input{
+    width: 100%;
+    font-size: 28rpx;
+    line-height: 25rpx;
+}
+
+.input_line{
+    width: 100% ;
+    height: 1rpx;
+    border-top: 4rpx rgb(14, 192, 96) solid;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.change_name_button{
+    width: 30%;
+    height: 25%;
+    display: flex;
+    justify-content:space-around;
+    position: absolute;
+    bottom: 20rpx;
+    right: 20rpx;
+}
+
+.change_name_button_item{
+    width: 45%;
+    height: 100%;
+    background-color: white;
+    font-size: 28rpx;
+    font-weight: 600;
+    color: rgb(14, 192, 96);
+    position: relative;
+}
+
+.change_name_button_item *{
+    width: 56rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.change_name_button_item:hover{
+    background-color: rgb(230,230,230);
+}
