@@ -38,7 +38,7 @@
 
     </view>
 
-    <view class="clock_in" onTap="handle_clock" a:if="{{ clock_in }}">
+    <view class="clock_in" onTap="handle_clock" a:if="{{ !clock_in }}">
       <view class="clock_in_bar">
         <view class="clock_in_img_border"></view>
         <image mode="aspectFit" src="../../images/user_image/clock_in/customs-clearance-data.png" />
@@ -134,6 +134,20 @@
     <view class="longitudinal_function_item_3">
       <image mode="scaleToFill" src="../../images/user_image/longitudinal_function_bar/right.png" />
     </view>
+  </view>
+
+</view>
+
+
+
+<!-- 打卡成功弹框 -->
+<view class="clock_success">
+  <view class="change_head_bg" onTap="">
+    
+  </view>
+
+  <view class="clock_success_bar">
+    
   </view>
 
 </view>
