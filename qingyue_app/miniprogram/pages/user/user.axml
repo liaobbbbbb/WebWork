@@ -1,0 +1,153 @@
+<view class="id_top_bar">
+  <view class="id_mes_bar">
+    <view class="id_mes" onTap="show_id_page">
+      <image mode="aspectFit" src="../../images/user_image/id_mes_bar/user.png" />
+    </view>
+    <view class="id_name" onTap="show_id_page">
+      {{user_mes.user_name}}
+    </view>
+
+    <view class="id_data_bar">
+
+      <view class="id_data_item">
+        <view class="id_data_item_1">
+          {{user_mes.td_kil}}
+        </view>
+        <view class="id_data_item_2">
+          今日公里数
+        </view>
+      </view>
+
+      <view class="id_data_item_0">
+        <view class="id_data_item_1">
+          {{user_mes.trip_num}}
+        </view>
+        <view class="id_data_item_2">
+          出行次数
+        </view>
+      </view>
+
+      <view class="id_data_item_0">
+        <view class="id_data_item_1">
+          {{user_mes.total_kil}}
+        </view>
+        <view class="id_data_item_2">
+          总公里数
+        </view>
+      </view>
+
+    </view>
+
+    <!-- <view class="clock_in" onTap="handle_clock" a:if="{{ !clock_in }}">
+      <view class="clock_in_bar">
+        <view class="clock_in_img_border"></view>
+        <image mode="aspectFit" src="../../images/user_image/clock_in/customs-clearance-data.png" />
+        <view class="clock_in_mes">
+          打卡
+        </view>
+      </view>
+    </view>
+
+    <view class="clock_in" a:else>
+      <view class="clock_in_bar">
+        <view class="clock_in_mes_1">
+          已打卡
+        </view>
+      </view>
+    </view> -->
+
+  </view>
+</view>
+
+<view class="lateral_function_bar">
+
+  <view class="lateral_function_item">
+    <view class="lateral_function_item_1">
+      <view class="lateral_function_decoration_1"></view>
+      <view class="lateral_function_decoration_2"></view>
+      <image mode="aspectFit" src="../../images/user_image/lateral_function_bar/application-record.png" />
+    </view>
+    <view class="lateral_function_item_2">
+      出行记录
+    </view>
+  </view>
+
+  <view class="lateral_function_item">
+    <view class="lateral_function_item_1">
+      <image mode="aspectFit" src="../../images/user_image/lateral_function_bar/honor.png" />
+    </view>
+    <view class="lateral_function_item_2">
+      我的积分
+    </view>
+  </view>
+
+  <view class="lateral_function_item">
+    <view class="lateral_function_item_1">
+      <image mode="aspectFit" src="../../images/user_image/lateral_function_bar/top-raning.png" />
+    </view>
+    <view class="lateral_function_item_2">
+      我的成就
+    </view>
+  </view>
+
+</view>
+  
+<view class="longitudinal_function_bar">
+  
+  <view class="longitudinal_function_item">
+    <view class="longitudinal_function_item_1">
+      <image mode="aspectFit" src="../../images/user_image/longitudinal_function_bar/lable.png" />
+    </view>
+    <view class="longitudinal_function_item_2">
+      功能1
+    </view>
+    <view class="longitudinal_function_item_3">
+      <image mode="scaleToFill" src="../../images/user_image/longitudinal_function_bar/right.png" />
+    </view>
+    <view class="longitudinal_function_line"></view>
+  </view>
+
+
+  <view class="longitudinal_function_item">
+    <view class="longitudinal_function_item_1">
+      <image mode="aspectFit" src="../../images/user_image/longitudinal_function_bar/lable.png" />
+    </view>
+    <view class="longitudinal_function_item_2">
+      功能2
+    </view>
+    <view class="longitudinal_function_item_3">
+      <image mode="scaleToFill" src="../../images/user_image/longitudinal_function_bar/right.png" />
+    </view>
+    <view class="longitudinal_function_line"></view>
+  </view>
+
+  
+
+  <view class="longitudinal_function_item">
+    <view class="longitudinal_function_item_1">
+      <view class="longitudinal_function_decoration_1"></view>
+      <image mode="aspectFit" src="../../images/user_image/longitudinal_function_bar/settings.png" />
+    </view>
+    <view class="longitudinal_function_item_2">
+      设置
+    </view>
+    <view class="longitudinal_function_item_3">
+      <image mode="scaleToFill" src="../../images/user_image/longitudinal_function_bar/right.png" />
+    </view>
+  </view>
+
+</view>
+
+
+
+<!-- 打卡成功弹框 -->
+<!-- <view class="clock_success">
+  <view class="change_head_bg" onTap="">
+    
+  </view>
+
+  <view class="clock_success_bar">
+    
+  </view>
+
+</view> -->
