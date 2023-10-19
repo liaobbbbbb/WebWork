@@ -12,7 +12,7 @@
       头像
     </view>
     <view class="longitudinal_function_item_img">
-      <image mode="scaleToFill" src="../../../images/user_image/user_page/user.png" />
+      <image mode="scaleToFill" src={{ user_img }} />
     </view>
     <view class="longitudinal_function_item_3">
       <image mode="scaleToFill" src="../../../images/user_image/user_page/right.png" />
@@ -35,7 +35,7 @@
       昵称
     </view>
     <view class="longitudinal_function_item_2">
-      {{user_mes.user_name}}
+      {{ user_name }}
     </view>
     <view class="longitudinal_function_item_3">
       <image mode="scaleToFill" src="../../../images/user_image/user_page/right.png" />

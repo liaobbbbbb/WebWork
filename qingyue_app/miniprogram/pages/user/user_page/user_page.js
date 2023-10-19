@@ -1,8 +1,9 @@
 Page({
   data: {
+    user_img:'',
+    user_name:'',
     user_mes:{
       user_id:52286121,
-      user_name:'Gargantua',
       user_sex:'男',
       user_num:'15003223901',
       user_alipay:'*宝斌',
@@ -74,10 +75,15 @@ Page({
     })
   },
   onLoad() {
+    self = this
     const eventChannel = this.getOpenerEventChannel();
       // 通过监听 page_user 事件，接收 user 页面传过来的数据。
       eventChannel.on('PageA_Data', data => {
-        console.log(data); // { "data": "hi～ 我是 pageA" }
+        // console.log(data); 
+        self.setData({
+          user_img:data.user_img,
+          user_name:data.user_name
+        })
       });
   },
   onKeyboardHeight(){

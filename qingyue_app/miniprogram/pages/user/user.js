@@ -1,6 +1,5 @@
 Page({
   data: {
-    // 获取到的图片不显示
     user_img:'../../images/user_image/id_mes_bar/user.png',
     user_name:"登录/注册",
     user_mes:{
@@ -79,16 +78,25 @@ Page({
           console.log(`userInfo:`, userInfo);
           userInfo.nickName = userInfo.nick_name;
           delete userInfo.nick_name;
+          
+          // 如果用户昵称为空,生成一个昵称,并显示
+
           this.setData({
             hasUserInfo: true,
             user_img:userInfo.avatar,
             user_name:userInfo.nickName
           });
+
+          // 输出登录成功提示框
+          // 第一次登录后将token信息传入数据库，登录前获取
+
         }).catch(error => {
           console.error('getAuthUserInfo', error);
         });
       }
     });
   },
-  onLoad() {},
+  onLoad() {
+
+  },
 });
