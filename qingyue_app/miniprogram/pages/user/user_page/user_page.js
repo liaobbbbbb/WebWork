@@ -73,7 +73,13 @@ Page({
       show_change_num: !this.data.show_change_num
     })
   },
-  onLoad() {},
+  onLoad() {
+    const eventChannel = this.getOpenerEventChannel();
+      // 通过监听 page_user 事件，接收 user 页面传过来的数据。
+      eventChannel.on('PageA_Data', data => {
+        console.log(data); // { "data": "hi～ 我是 pageA" }
+      });
+  },
   onKeyboardHeight(){
     // 键盘高度变化时触发
   }

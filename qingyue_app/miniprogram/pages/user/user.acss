@@ -53,7 +53,7 @@ page{
 .id_data_item_1{
     position: absolute;
     left:50%;
-    top: 50%;
+    top: 60%;
     transform:translateX(-50%) translateY(-50%);
 }
 

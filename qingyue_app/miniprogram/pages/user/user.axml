@@ -1,10 +1,10 @@
 <view class="id_top_bar">
   <view class="id_mes_bar">
     <view class="id_mes" onTap="show_id_page">
-      <image mode="aspectFit" src="../../images/user_image/id_mes_bar/user.png" />
+      <image mode="scaleToFill" src={{ user_img }}/>
     </view>
     <view class="id_name" onTap="show_id_page">
-      {{user_mes.user_name}}
+      {{ user_name }}
     </view>
 
     <view class="id_data_bar">
